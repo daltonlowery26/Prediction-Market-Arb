@@ -22,12 +22,12 @@ def get_markets(endpoint, params=None):
         response.raise_for_status()
 
 # Example calls
-market_data = get_markets("/markets?start_date_min=2025-02-01T00:00:00Z&limit=500&closed=false")  # get market starting after feb first that are still active, limit 500
+market_data = get_markets("/markets?start_date_min=2025-03-01T00:00:00Z&limit=500&closed=false")  # get market starting after march first that are still active, limit 500
 
 # Convert to DataFrame
 df = pd.DataFrame(market_data)
 
 # Export to CSV
-df.to_csv("polymarket_data/data/market_data.csv", index=False)
+df.to_csv("polymarket_data/data/raw/market_gamma_2.csv", index=False)
 
 print("Data exported to market_data.csv")
